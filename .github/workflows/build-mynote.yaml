@@ -11,10 +11,11 @@ jobs:
     - uses: actions/checkout@master
     - run: ls -al
     - run: mkdocs build
-    - run: |
-      mkdir ~/.ssh
-      echo "$SSH_KEY" > ~/.ssh/id_rsa
-      scp -r -P site/* root@note.mzcls.com:/var/www/mynote/
+    - push server:
+      run: |
+        mkdir ~/.ssh 
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
+        scp -r -P site/* root@note.mzcls.com:/var/www/mynote/
 
-    - env:
-      SSH_KEY: ${{ secrets.SSH_KEY }}
+      env:
+        SSH_KEY: ${{ secrets.SSH_KEY }}
