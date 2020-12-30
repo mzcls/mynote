@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="mz">
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <title>Fedora精简 &mdash; My Note</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
@@ -38,12 +39,70 @@
             </div>
             <nav class="nav">
                 <ul class="root">
-                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
-                    <li class="toctree-l1">
-<a class="nav-item" href="../../about.md">About</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../..">简介</a></li>
+                    <li class="toctree-l1"><a class="nav-item" href="../../about/">关于我</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Database</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="../../database/Mysql%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9/">Mysql初始密码修改</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../../database/mariadb10%E7%9A%84root%E8%B4%A6%E6%88%B7%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E4%BB%A5%E5%8F%8A%E4%BF%AE%E6%94%B9/">Mariadb10的root账户初始密码以及修改</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Linux</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="../Fedora-fcitx%E8%AE%BE%E7%BD%AE/">Fedora fcitx设置</a></li>
+    <li class="toctree-l2 current">
+<a class="nav-item current" href="./">Fedora精简</a>
+<ul class="subnav">
+</ul></li>
+    <li class="toctree-l2"><a class="nav-item" href="../LFS%E6%9E%84%E5%BB%BALinux/">LFS</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../Let%27s%20Encrypt%E9%80%9A%E9%85%8D%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7/">Let's Encrypt通配证书申请</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../Linux%E5%AE%89%E8%A3%85grub-efi/">Linux安装grub efi</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../Linux%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/">Linux终端配置</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../ShadowSocks%2BPrivoxy%E5%AE%9E%E7%8E%B0http%E3%80%81https%E4%BB%A3%E7%90%86/">ShadowSocks+Privoxy实现http、https代理</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../Ubuntu-18.04%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip/">Ubuntu 18.04设置固定ip</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../docker%E5%AE%B9%E5%99%A8ip%E8%AE%BE%E7%BD%AE/">Docker容器ip设置</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../fedora-31-%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/">Fedora 31 安装docker无法启动</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../fpm%E5%88%B6%E4%BD%9Crpm%E3%80%81deb%E5%8C%85/">Fpm制作rpm、deb包</a><a class="nav-item" href="../fpm%E5%88%B6%E4%BD%9Crpm%E3%80%81deb%E5%8C%85/">Fpm制作rpm、deb包</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../linux-Gnome-%E6%8F%92%E5%85%A5%E9%BC%A0%E6%A0%87%E8%87%AA%E5%8A%A8%E7%A6%81%E7%94%A8%E8%A7%A6%E6%91%B8%E6%9D%BF/">linux Gnome 插入鼠标自动禁用触摸板</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../%E5%88%B6%E4%BD%9CDesktop%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87/">制作Desktop桌面启动图标</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../%E5%9C%A8fedora%E4%B8%AD%E5%88%A9%E7%94%A8docker%E8%BF%90%E8%A1%8C%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/">在fedora中利用docker运行百度网盘</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../%E8%A7%A3%E5%86%B3vim/">解决vim</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Other</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a><a class="nav-item" href="../../other/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode 快捷键有五种组合方式</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Windows</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="../../windows/windows%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8%E5%8F%8A%E6%81%A2%E5%A4%8D%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/">Windows卸载自带应用及恢复应用商店</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Work</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../work/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%80%9F%E8%BF%98%E6%89%8B%E6%9C%BA%E8%A7%84%E8%8C%83/">实验室借还手机规范</a><a class="nav-item" href="../../work/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%80%9F%E8%BF%98%E6%89%8B%E6%9C%BA%E8%A7%84%E8%8C%83/">实验室借还手机规范</a><a class="nav-item" href="../../work/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%80%9F%E8%BF%98%E6%89%8B%E6%9C%BA%E8%A7%84%E8%8C%83/">实验室借还手机规范</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../work/%E5%B7%A5%E4%BD%9C%E4%BA%A4%E6%8E%A5%E6%96%87%E6%A1%A3/">工作交接文档</a></li>
+    <li class="toctree-l2">
+<a class="nav-item" href="../../work/%E6%89%8B%E6%9C%BA%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5/">手机始终无法连接</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../work/%E6%AF%8F%E6%97%A5%E5%9B%BA%E5%AE%9A%E5%B7%A5%E4%BD%9C%E4%BB%BB%E5%8A%A1/">每日固定工作任务</a></li>
+</ul></li>
                 </ul>
             </nav>
             <div class="repo">
+    <div class="previous"><a href="../Fedora-fcitx%E8%AE%BE%E7%BD%AE/">&laquo; Previous</a></div>
+    <div class="next"><a href="../LFS%E6%9E%84%E5%BB%BALinux/">Next &raquo;</a></div>
 </div>
         </aside>
         <div id="spacer"><button class="arrow"></button></div>
@@ -55,7 +114,7 @@
             <div id="main">
                 <nav class="breadcrumbs">
 <ul>
-    
+    <li>Linux</li>
 </ul>
 </nav>
                 <div id="content"><pre><code>sudo dnf remove baobab  abrt   libreoffice-* rhythmbox gnome-boxes gnome-maps   gnome-weather   cheese gnome-cal* gnome-contacts  yelp   simple-scan evince totem gnome-clocks gnome-characters gnome-font-viewer gnome-disk
@@ -70,6 +129,10 @@ sed -i &quot;s@http://download.fedoraproject.org/pub/fedora/linux@https://mirror
 
 </code></pre></div>
                 <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../Fedora-fcitx%E8%AE%BE%E7%BD%AE/" title="Fedora fcitx设置"><span>Previous</span></a></div>
+        <div class="next"><a href="../LFS%E6%9E%84%E5%BB%BALinux/" title="LFS"><span>Next</span></a></div>
+    </div>
     <div class="footer-note">
         <p>
             Built with <a href="http://www.mkdocs.org">MkDocs</a> using
