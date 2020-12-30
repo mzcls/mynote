@@ -1,6 +1,6 @@
 site_name: My Note
 
-theme: ivory
+theme: rtd-dropdown
 
 site_author: mz
 site_description: 个人记录
