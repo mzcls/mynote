@@ -1,0 +1,14 @@
+name: build-mynote
+on: push
+
+jobs:
+  build-mynote:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        sudo apt install python-pip -y
+        sudo pip install mkdocs mkdocs-rtd-dropdown
+    - uses: actions/checkout@master
+    - run: ls -al
+    - run: mkdocs build
+

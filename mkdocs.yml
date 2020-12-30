@@ -1,0 +1,8 @@
+site_name: My Note
+nav:
+  - Home: index.md
+  - About: about.md
+
+
+theme:
+  name: 'rtd-dropdown'
