@@ -6,9 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        sudo apt install python-pip -y
+        sudo apt install python-pip openssh-server -y
         sudo pip install mkdocs mkdocs-rtd-dropdown
     - uses: actions/checkout@master
     - run: ls -al
     - run: mkdocs build
+    - run: |
+      mkdir ~/.ssh
+      echo "$SSH_KEY" > ~/.ssh/id_rsa
+      scp -r -P site/* root@note.mzcls.com:/var/www/mynote/
 
+    - env:
+      SSH_KEY: ${{ secrets.SSH_KEY }}
