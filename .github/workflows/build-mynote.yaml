@@ -15,7 +15,7 @@ jobs:
       run: |
         mkdir ~/.ssh 
         echo "$SSH_KEY" > ~/.ssh/id_rsa
-        scp -r -P site/* root@note.mzcls.com:/var/www/mynote/
+        scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
 
       env:
         SSH_KEY: ${{ secrets.SSH_KEY }}
