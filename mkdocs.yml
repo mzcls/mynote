@@ -4,5 +4,4 @@ nav:
   - About: about.md
 
 
-theme:
-  name: 'rtd-dropdown'
+theme: ivory
