@@ -14,8 +14,5 @@ jobs:
     - name: push server
       run: |
         mkdir ~/.ssh 
-        echo "$SSH_KEY" > ~/.ssh/id_rsa
-        sshpass -p $SSH_KEY scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
+        sshpass -p chlish520 scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
 
-      env:
-        SSH_KEY: ${{ secrets.SSH_KEY }}
