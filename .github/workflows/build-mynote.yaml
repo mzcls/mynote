@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        sudo apt install python-pip openssh-server sshpass -y
+        sudo apt install python-pip openssh-server -y
         sudo pip install mkdocs mkdocs-rtd-dropdown
     - uses: actions/checkout@master
     - run: ls -al
@@ -15,6 +15,8 @@ jobs:
       run: |
         mkdir ~/.ssh
         echo "$SSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 > ~/.ssh/id_rsa
+        ssh-keyscan -p 5821 note.mzcls.com > ~/.ssh/known_hosts
         scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
       env:
-        SSH_KEY: ${{ secrets.SSH_KEY }}
+        SSH_KEY: ${{secrets.SSH_KEY}}
