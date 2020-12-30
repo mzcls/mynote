@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@master
     - run: ls -al
     - run: mkdocs build
-    - push-server:
+    - push:
       run: |
         mkdir ~/.ssh 
         echo "$SSH_KEY" > ~/.ssh/id_rsa
