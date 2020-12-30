@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Fpm制作rpm、deb包 &mdash; My Note</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../.." class="site-name"> My Note</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../..">Home</a></li>
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../about.md">About</a></li>
+                </ul>
+            </nav>
+            <div class="repo">
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../.." class="site-name"> My Note</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    
+</ul>
+</nav>
+                <div id="content"><ol>
+<li>安装ruby模块
+<code>sudo dnf  -y install ruby rubygems ruby-devel rpm-build</code></li>
+<li>添加国内的Rubygems仓库
+<code>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/</code></li>
+<li>安在fpm
+<code>gem install fpm</code></li>
+</ol>
+<h2 id="fpm">fpm常用参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s</td>
+<td>指定源类型</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>指定目标类型</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>指定包的名字</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>指定包的版本号</td>
+</tr>
+<tr>
+<td>C</td>
+<td>指定打包的相对路径 change directory to here before searching for files</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>指定依赖于哪些包</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>第二次打包时目录下如果有同名安装包存在，则覆盖它</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>输出的安装包的目录，不想放在当前目录下就需要指定</td>
+</tr>
+<tr>
+<td>–post-install</td>
+<td>软件包安装完成之后所要运行的脚本，同–after-install</td>
+</tr>
+<tr>
+<td>–pre-install</td>
+<td>软件包安装完成之前所要运行的脚本，同–before-install</td>
+</tr>
+<tr>
+<td>–post-uninstall</td>
+<td>软件包卸载之后所要运行的脚本，同–after-install</td>
+</tr>
+<tr>
+<td>–pre-uninstall</td>
+<td>软件包卸载之前所要运行的脚本，同–before-install</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">实例</h2>
+<ol>
+<li>创建工作目录
+<code>mkdir $HOME/data</code></li>
+<li>
+<p>创建源文件目录
+<code>mkdir opt usr/local/bin/ usr/lib/systemd/system</code></p>
+</li>
+<li>
+<p>安装后需要执行的脚本ssr_install_post.sh</p>
+</li>
+</ol>
+<pre><code class="language-o">#!/bin/bash
+
+chmod +x /usr/local/bin/ssr
+systemctl daemon-reload
+systemctl enable ssr
+systemctl start ssr
+echo &quot;ssr start success&quot;
+</code></pre>
+<ol>
+<li>卸载后需要执行的脚本 after_remove.sh</li>
+</ol>
+<pre><code>#!/bin/bash
+
+systemctl disable ssr
+systemctl stop ssr
+rm -rf /usr/local/bin/ssr
+rm -rf /usr/lib/systemd/system/ssr.service
+echo &quot;Uninstall ssr success&quot;
+</code></pre>
+<ol>
+<li>其他脚本
+6.打包rpm</li>
+</ol>
+<pre><code>fpm -f -s dir -t rpm -n shadowsocksr -v 1.0.0 --description ssr-python --post-install ssr_install_post.sh --post-uninstall  after_remove.sh -C /home/mz/rpmbuild/rpm
+</code></pre>
+<h3 id="_2">参数说明</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s dir</td>
+<td>指定源文件是目录的形式</td>
+</tr>
+<tr>
+<td>-t rpm</td>
+<td>指定打包的格式</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>指定打包后名称</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>版本号</td>
+</tr>
+<tr>
+<td>description</td>
+<td>描述信息</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>定需要依赖的包。安装MySQL前需要在系统上安装libaio、libaio-devel。当你安装fpm打包成的rpm包时，它会先去检测系统上是否安装了这两个包，如果没有安装会给出提示，并终止rpm的安装。</td>
+</tr>
+<tr>
+<td>–pre-install</td>
+<td>安装rpm包前需要执行的脚本</td>
+</tr>
+<tr>
+<td>–post-install</td>
+<td>安装rpm包后需要执行的脚本</td>
+</tr>
+</tbody>
+</table></div>
+                <footer>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../search/main.js"></script>
+</body>
+
+</html>
