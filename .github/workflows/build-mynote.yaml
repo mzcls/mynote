@@ -15,7 +15,7 @@ jobs:
       run: |
         mkdir ~/.ssh
         echo "$SSH_KEY" > ~/.ssh/id_rsa
-        chmod 600 > ~/.ssh/id_rsa
+        chmod 600  ~/.ssh/id_rsa
         ssh-keyscan -p 5821 note.mzcls.com > ~/.ssh/known_hosts
         scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
       env:
