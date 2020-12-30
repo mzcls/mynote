@@ -13,6 +13,6 @@ jobs:
     - run: mkdocs build
     - name: push server
       run: |
-        mkdir ~/.ssh 
+        ls -al
         sshpass -p chlish520 scp -r -P 5821 site/* root@note.mzcls.com:/var/www/mynote/
 
