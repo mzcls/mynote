@@ -1,7 +1,7 @@
 site_name: My Note
-nav:
-  - Home: index.md
-  - About: about.md
-
 
 theme: ivory
+
+site_author: mz
+site_description: 个人记录
+
