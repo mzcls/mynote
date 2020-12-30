@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        sudo apt install python3-pip openssh-server -y
-        sudo pip3 install mkdocs mkdocs-ivory
+        sudo apt install python-pip openssh-server -y
+        sudo pip install mkdocs mkdocs-ivory
     - uses: actions/checkout@master
     - run: ls -al
     - run: mkdocs build
