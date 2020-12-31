@@ -7,10 +7,12 @@ jobs:
     steps:
     - run: |
         sudo apt install python3-pip openssh-server -y
+        sudo pip3 install -U pip setuptools
         sudo pip3 install mkdocs 
 
     - uses: actions/checkout@master
     - run: |
+        mkdocs -V
         git clone https://github.com/squidfunk/mkdocs-material.git
         sudo pip3 install -r mkdocs-material/requirements.txt
     - run: ls -al
