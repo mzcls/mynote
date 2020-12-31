@@ -7,7 +7,7 @@ jobs:
     steps:
     - run: |
         sudo apt install python-pip openssh-server -y
-        sudo pip install mkdocs mkdocs-ivory
+        sudo pip install mkdocs mkdocs-material
 
     - uses: actions/checkout@master
     - run: ls -al
