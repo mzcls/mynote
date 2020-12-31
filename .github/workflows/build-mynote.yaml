@@ -7,9 +7,12 @@ jobs:
     steps:
     - run: |
         sudo apt install python-pip openssh-server -y
-        sudo pip install mkdocs mkdocs-material
+        sudo pip install mkdocs 
 
     - uses: actions/checkout@master
+    - run: |
+        git clone https://github.com/squidfunk/mkdocs-material.git
+        sudo pip install -r mkdocs-material/requirements.txt
     - run: ls -al
     - run: mkdocs build
     - name: push server
