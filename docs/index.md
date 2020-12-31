@@ -1,6 +1,6 @@
-# 简介
+# Introduction
 
-## 个人记录
+## My Note
 
 
 

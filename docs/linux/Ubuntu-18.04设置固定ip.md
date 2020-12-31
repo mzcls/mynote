@@ -22,5 +22,7 @@ network:
 
 //保存后执行
 sudo netplan apply
+######
+特别注意yaml文件缩进
 
 ```
