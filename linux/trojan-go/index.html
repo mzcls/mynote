@@ -14,7 +14,7 @@
     
     
       
-        <title>制作Desktop桌面启动图标 - My Note</title>
+        <title>Trojan go - My Note</title>
       
     
     
@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#trojan-go-docs" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -90,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              制作Desktop桌面启动图标
+              Trojan go
             
           </span>
         </div>
@@ -286,18 +291,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../trojan-go/" class="md-nav__link">
-        Trojan go
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -306,10 +299,63 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Trojan go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        制作Desktop桌面启动图标
+        Trojan go
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trojan-go-docs" class="md-nav__link">
+    trojan-go docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    client
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%88%B6%E4%BD%9CDesktop%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+        制作Desktop桌面启动图标
+      </a>
     </li>
   
 
@@ -585,43 +631,143 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trojan-go-docs" class="md-nav__link">
+    trojan-go docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    client
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>制作Desktop桌面启动图标</h1>
+                  <h1>Trojan go</h1>
                 
-                <p>创建一个example.desktop</p>
-<pre><code>[Desktop Entry]
-Encoding=UTF-8
-Name=IntelliJ IDEA
-GenericName=IntelliJ IDEA
-Comment=The Java IDE for Professional Developers by JetBrains
-Exec=/opt/SoftWare/idea-IU-172.4343.14/bin/idea.sh %f
-Icon=/opt/SoftWare/idea-IU-172.4343.14/bin/idea.png
-Terminal=false
-Type=Application
-Categories=Application;Programme;
+                <h4 id="trojan-go-docs"><a href="https://p4gefau1t.github.io/trojan-go/basic/trojan/">trojan-go docs</a></h4>
+<p><a href="https://github.com/p4gefau1t/trojan-go">trojan-go github</a></p>
+<h4 id="server">server</h4>
+<pre><code>.
+├── cert.crt
+├── geoip.dat
+├── geosite.dat
+├── key.key
+├── server.json
+├── server.yaml
+├── s.yaml
+├── trojan
+└── trojan.service
 </code></pre>
-<p>关键词                      意义
-[Desktop Entry]             文件头
-Encoding                        编码
-Name                        应用名称
-Name[xx]                        不同语言的应用名称
-GenericName             描述
-Comment                 注释
-Exec                            执行的命令
-Icon                            图标路径
-Terminal                    是否使用终端
-Type                            启动器类型
-Categories              应用的类型（内容相关）</p>
-<hr />
-<p>创建文件，以.desktop为后缀。
-编写内容，修改权限
-双击启动程序，添加信任
-移动到/usr/share/applications/目录下，这样就可以在左上角应用程序中显示</p>
+<pre><code>## server.json
+
+{
+    &quot;run_type&quot;: &quot;server&quot;,
+    &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
+    &quot;local_port&quot;: 4430,
+    &quot;remote_addr&quot;: &quot;127.0.0.1&quot;,
+    &quot;remote_port&quot;: 80,
+    &quot;password&quot;: [
+        &quot;password&quot;
+    ],
+    &quot;ssl&quot;: {
+        &quot;cert&quot;: &quot;/root/mzcls.com/mzcls.com.cer&quot;,
+        &quot;key&quot;: &quot;/root/mzcls.com/mzcls.com.key&quot;,
+        &quot;sni&quot;: &quot;v2.mzcls.com&quot;,
+        &quot;fallback_port&quot;: 443
+    }
+}
+
+</code></pre>
+<pre><code>## trojan.service
+
+[Unit]
+Description=trojan
+
+[Service]
+ExecStart=/root/server/trojan --config /root/server/server.json
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<h4 id="client">client</h4>
+<pre><code>## client.yaml
+
+run-type: client
+local-addr: 127.0.0.1
+local-port: 1080
+remote-addr: v2.mzcls.com
+remote-port: 4430
+password:
+    - password
+router:
+    enabled: true
+    bypass: ['geoip:cn', 'geoip:private', 'geosite:cn', 'geosite:geolocation-cn']
+    block: ['geosite:category-ads']
+    proxy: ['geosite:geolocation-!cn']
+    default_policy: proxy
+    geoip: geoip.dat
+    geosite: geosite.dat
+ssl:
+  cert: mzcls.com/mzcls.com.cer
+  key: mzcls.com/mzcls.com.key
+  sni: v2.mzcls.com
+
+</code></pre>
+<pre><code>## trojan.servie
+
+[Unit]
+Description=trojan
+
+[Service]
+ExecStart=/opt/trojan/trojan --config /opt/trojan/client.yaml
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
                 
               
               
@@ -639,7 +785,7 @@ Categories              应用的类型（内容相关）</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../trojan-go/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../fpm%E5%88%B6%E4%BD%9Crpm%E3%80%81deb%E5%8C%85/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -648,19 +794,19 @@ Categories              应用的类型（内容相关）</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Trojan go
+              Fpm制作rpm、deb包
             </div>
           </div>
         </a>
       
       
-        <a href="../%E5%9C%A8fedora%E4%B8%AD%E5%88%A9%E7%94%A8docker%E8%BF%90%E8%A1%8C%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../%E5%88%B6%E4%BD%9CDesktop%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              在fedora中利用docker运行百度网盘
+              制作Desktop桌面启动图标
             </div>
           </div>
           <div class="md-footer__button md-icon">
