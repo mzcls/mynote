@@ -21,7 +21,7 @@
     3. 进入下载的文件的文件夹执行: 
     
        ```
-       * 1. ` .\reinstall-preinstalledApps.ps1 *Microsoft.WindowsStore*`
+       .\reinstall-preinstalledApps.ps1 *Microsoft.WindowsStore
        
         --- 恢复成功 ----
        ```
